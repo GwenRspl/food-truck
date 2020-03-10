@@ -8,6 +8,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Actualite {
+	
+	
 	@Id
 	@GeneratedValue
 	private int id;
