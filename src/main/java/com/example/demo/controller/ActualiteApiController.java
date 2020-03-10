@@ -24,12 +24,6 @@ public class ActualiteApiController {
 	@Autowired
 	private ActualitesRepository repository;
 
-	@GetMapping("")
-	public List<Actualite> getAll() {
-		return this.repository.findAll();
-	}
-
-	
 	@GetMapping("/actualites")
 	public ResponseEntity<List<Actualite>> list() {
 		return new ResponseEntity<>(this.repository.findAll(), HttpStatus.OK);
@@ -78,7 +72,5 @@ public class ActualiteApiController {
 			return new ResponseEntity<>("Erreur, l'actualité n'existe pas", HttpStatus.NOT_FOUND);
 		}
 	}
-	
-
 
 }
