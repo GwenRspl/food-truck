@@ -28,7 +28,6 @@ public class Product {
 	private int stock;
 	private String description;
 	private String composition;
-	private int nbventes;
 
 	@Version
 	private int version;
@@ -99,13 +98,6 @@ public class Product {
 		this.composition = composition;
 	}
 
-	public int getNbventes() {
-		return nbventes;
-	}
-
-	public void setNbventes(int nbventes) {
-		this.nbventes = nbventes;
-	}
 
 	public int getVersion() {
 		return version;
@@ -131,7 +123,6 @@ public class Product {
 		this.stock = stock;
 		this.description = description;
 		this.composition = composition;
-		this.nbventes = nbventes;
 		this.version = version;
 	}
 
@@ -139,7 +130,7 @@ public class Product {
 
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", days=" + days + ", stock=" + stock
-				+ ", description=" + description + ", composition=" + composition + ", nbventes=" + nbventes + "]";
+				+ ", description=" + description + ", composition=" + composition + "]";
 	}
 
 }
