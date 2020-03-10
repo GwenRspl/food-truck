@@ -28,11 +28,21 @@ public class Product {
 	private int stock;
 	private String description;
 	private String composition;
-
+	private String image;
 	@Version
 	private int version;
 
+	
+	
 	// ACCESSEURS
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public int getId() {
 		return id;
