@@ -4,26 +4,24 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Version;
-import javax.persistence.*;
 
 @Entity
 public class Product {
-	
+
 	@Id
 	private int id;
-	
-	private String name; 
+
+	private String name;
 	private double price;
-	
-	
+
 	@ManyToMany
 	@JoinTable(name = "product_days", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "days_id"))
-	private Days days;
-	
-	
+	private List<Days> days;
+
 	@ManyToMany
 	@JoinTable(name = "product_mealtypes", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "mealtypes_id"))
 	private List<MealType> mealtypes;
@@ -31,13 +29,12 @@ public class Product {
 	private String description;
 	private String composition;
 	private int nbventes;
-	
+
 	@Version
 	private int version;
 
-	
-//	ACCESSEURS 
-	
+	// ACCESSEURS
+
 	public int getId() {
 		return id;
 	}
@@ -62,11 +59,11 @@ public class Product {
 		this.price = price;
 	}
 
-	public Days getDays() {
+	public List<Days> getDays() {
 		return days;
 	}
 
-	public void setDays(Days days) {
+	public void setDays(List<Days> days) {
 		this.days = days;
 	}
 
@@ -117,14 +114,15 @@ public class Product {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-	
-	
-	
-//	CONSTRUCTEURS
 
-	public Product(int id, String name, double price, Days days, List<MealType> mealtypes, int stock,
-			String description, String composition, int nbventes, int version) {
+	// CONSTRUCTEURS
+
+	public Product() {
 		super();
+	}
+
+	public Product(int id, String name, double price, List<Days> days, List<MealType> mealtypes, int stock,
+			String description, String composition, int nbventes, int version) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
@@ -137,20 +135,11 @@ public class Product {
 		this.version = version;
 	}
 
-	public Product() {
-		super();
-	}
+	// TOSTRING
 
-
-//	TOSTRING
-	
-	
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", days=" + days + ", stock=" + stock
 				+ ", description=" + description + ", composition=" + composition + ", nbventes=" + nbventes + "]";
 	}
-	
-	
-	
-	
+
 }
