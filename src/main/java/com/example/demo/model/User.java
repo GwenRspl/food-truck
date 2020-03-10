@@ -37,13 +37,23 @@ public class User {
 	@JoinColumn(name="profile_id")
 	private Profile profile;
 	
+	@OneToMany(mappedBy="user")
+	private List<Rating> rating;
+	
 	
 //	ACCESSEURS
 	
+	public List<Rating> getRating() {
+		return rating;
+	}
+	public void setRating(List<Rating> rating) {
+		this.rating = rating;
+	}
 	
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}

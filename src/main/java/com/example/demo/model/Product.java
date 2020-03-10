@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -29,6 +30,10 @@ public class Product {
 	private String description;
 	private String composition;
 	private String image;
+	
+	@OneToMany(mappedBy="product")
+	private List<Rating> rating;
+	
 	@Version
 	private int version;
 
@@ -116,9 +121,17 @@ public class Product {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+	public List<Rating> getRating() {
+		return rating;
+	}
 
+	public void setRating(List<Rating> rating) {
+		this.rating = rating;
+	}
+
+	
 	// CONSTRUCTEURS
-
+	
 	public Product() {
 		super();
 	}
