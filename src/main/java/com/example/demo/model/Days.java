@@ -66,6 +66,13 @@ public class Days {
 		super();
 	}
 
-	// TOSTRING
 
+	// TOSTRING
+	
+	@Override
+	public String toString() {
+		return "Days [id=" + id + ", jour=" + jour + "]";
+	}
+
+	
 }
