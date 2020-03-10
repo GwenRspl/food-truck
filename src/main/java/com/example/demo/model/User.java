@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,7 +25,10 @@ public class User {
 	@ManyToOne 
 	@JoinColumn(name="gender_id") 
 	private Gender gender;
-//	private Address address;
+	
+	@OneToMany(mappedBy="user")
+	private List<Address> address;
+	
 	@ManyToOne 
 	@JoinColumn(name="society_id")
 	private Society society;
@@ -82,15 +86,12 @@ public class User {
 		this.gender = gender;
 	}
 	
-//	@OneToMany(mappedBy="User")
-//	public Address getAddress() {
-//		return address;
-//	}
-//	public void setAdress(Address adress) {
-//		this.address = address;
-//	}
-	
-	
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
 	public Society getSociety() {
 		return society;
 	}
