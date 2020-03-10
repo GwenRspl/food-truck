@@ -125,8 +125,9 @@ public class User {
 
 //	CONSTRUCT
 	
-	public User(int id, String name, String firstname, Date birthday, String password, String phonenumber,
-			Gender gender, Society society, Profile profile, String email) {
+	
+	public User(int id, String name, String firstname, Date birthday, String password, String phonenumber, String email,
+			Gender gender, List<Address> address, Society society, Profile profile, List<Rating> rating) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -134,13 +135,13 @@ public class User {
 		this.birthday = birthday;
 		this.password = password;
 		this.phonenumber = phonenumber;
+		this.email = email;
 		this.gender = gender;
-//		this.address = address;
+		this.address = address;
 		this.society = society;
 		this.profile = profile;
-		this.email = email;
+		this.rating = rating;
 	}
-	
 	public User() {
 		super();
 	}
@@ -153,8 +154,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", firstname=" + firstname + ", birthday=" + birthday
-				+ ", password=" + password + ", phonenumber=" + phonenumber + ", gender=" + gender + ", society="
-				+ society + ", profile=" + profile + ", email=" + email + "]";
+				+ ", password=" + password + ", phonenumber=" + phonenumber + ", email=" + email + ", gender=" + gender
+				+ ", address=" + address + ", society=" + society + ", profile=" + profile + ", rating=" + rating + "]";
 	}
 	
 
