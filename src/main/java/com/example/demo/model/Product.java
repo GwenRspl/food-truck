@@ -3,6 +3,8 @@ package com.example.demo.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -14,6 +16,7 @@ import javax.persistence.Version;
 public class Product {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String name;
@@ -30,17 +33,15 @@ public class Product {
 	private String description;
 	private String composition;
 	private String image;
-	
-	@OneToMany(mappedBy="product")
+
+	@OneToMany(mappedBy = "product")
 	private List<Rating> rating;
-	
+
 	@Version
 	private int version;
 
-	
-	
 	// ACCESSEURS
-	
+
 	public String getImage() {
 		return image;
 	}
@@ -113,7 +114,6 @@ public class Product {
 		this.composition = composition;
 	}
 
-
 	public int getVersion() {
 		return version;
 	}
@@ -121,6 +121,7 @@ public class Product {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+
 	public List<Rating> getRating() {
 		return rating;
 	}
@@ -129,9 +130,8 @@ public class Product {
 		this.rating = rating;
 	}
 
-	
 	// CONSTRUCTEURS
-	
+
 	public Product() {
 		super();
 	}
