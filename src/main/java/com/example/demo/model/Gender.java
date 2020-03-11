@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Gender {
 
@@ -16,6 +18,7 @@ public class Gender {
 	private int id;
 	private String gendername;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "gender")
 	private List<User> user;
 	private int version;
@@ -61,6 +64,9 @@ public class Gender {
 		this.id = id;
 		this.gendername = gendername;
 		this.version = version;
+	}
+
+	public Gender() {
 	}
 
 	// TOSTRING

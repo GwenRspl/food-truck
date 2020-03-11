@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class MealType {
 	@Id
@@ -22,6 +24,7 @@ public class MealType {
 	@ManyToMany(mappedBy = "mealTypes")
 	private List<MealTime> mealTimes;
 
+	@JsonIgnore
 	@ManyToMany(mappedBy = "mealtypes")
 	private List<Product> products;
 

@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class MealTime {
 	@Id
@@ -21,6 +23,7 @@ public class MealTime {
 
 	private boolean active;
 
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "mealtime_mealtype", joinColumns = @JoinColumn(name = "mealtime_id"), inverseJoinColumns = @JoinColumn(name = "mealtype_id"))
 	private List<MealType> mealTypes;

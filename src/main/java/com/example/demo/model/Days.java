@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Days {
 
@@ -17,6 +19,7 @@ public class Days {
 	private int id;
 	private String jour;
 
+	@JsonIgnore
 	@ManyToMany(mappedBy = "days")
 	private List<Product> product;
 
