@@ -1,4 +1,4 @@
-import { Produit } from './../models/produit';
+import { Product } from './../models/product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,16 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  featuredProduits: Produit[] = [];
+  featuredProduits: Product[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.featuredProduits = [
-      { id: 1, img: './../../assets/img/img1.jpg', nom: 'Banane', prix: 12, note: 1 },
-      { id: 1, img: './../../assets/img/img1.jpg', nom: 'Banane', prix: 12, note: 1 },
-      { id: 1, img: './../../assets/img/img1.jpg', nom: 'Banane', prix: 12, note: 1 }
-    ];
+    this.featuredProduits = [];
   }
 
 }

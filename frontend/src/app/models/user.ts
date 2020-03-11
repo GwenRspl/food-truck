@@ -1,11 +1,10 @@
-import { Profiler } from 'inspector';
 import { Gender } from './gender';
-import { Address } from 'cluster';
 import { Society } from './society';
 import { Profile } from './profile';
 import { Rating } from './rating';
+import { Address } from './address';
 
-export class User{
+export class User {
   id: number;
   name: string;
   firstname: string;
@@ -14,7 +13,7 @@ export class User{
   phonenumber: string;
   email: string;
   gender: Gender;
-  address : Address[];
+  address: Address[];
   society: Society;
   profile: Profile;
   rating: Rating[];

@@ -17,6 +17,6 @@ export class ProductsService {
   }
 
   getProductsById(id: number) {
-    return this.getProducts().pipe(map((txs: Product[]) => txs.find(item => item.productId === id)));
+    return this.getProducts().pipe(map((txs: Product[]) => txs.find(item => item.id === id)));
   }
 }
