@@ -1,33 +1,23 @@
-export class User {
+import { Profiler } from 'inspector';
+import { Gender } from './gender';
+import { Address } from 'cluster';
+import { Society } from './society';
+import { Profile } from './profile';
+import { Rating } from './rating';
+
+export class User{
   id: number;
   name: string;
-  username: string;
-  email: string;
-  login: string;
+  firstname: string;
+  birthday: string;
   password: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
+  phonenumber: string;
+  email: string;
+  gender: Gender;
+  address : Address[];
+  society: Society;
+  profile: Profile;
+  rating: Rating[];
 
-}
 
-export class Company {
-  name: string;
-  catchPhrase: string;
-  bs: string;
-}
-
-export class Address {
-  streetnum: string;
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: Geo;
-}
-
-export class Geo {
-  lat: string;
-  lng: string;
 }

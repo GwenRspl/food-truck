@@ -22,7 +22,7 @@ public class Address {
 	private String zipCode;
 	private String city;
 	private String country;
-	private boolean isBillingAdress;
+	private boolean isBillingAddress;
 
 	@Version
 	private int version;
@@ -39,7 +39,7 @@ public class Address {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.country = country;
-		this.isBillingAdress = isBillingAdress;
+		this.isBillingAddress = isBillingAdress;
 	}
 
 	public int getId() {
@@ -90,12 +90,12 @@ public class Address {
 		this.country = country;
 	}
 
-	public boolean isBillingAdress() {
-		return isBillingAdress;
+	public boolean isBillingAddress() {
+		return isBillingAddress;
 	}
 
-	public void setBillingAdress(boolean isBillingAdress) {
-		this.isBillingAdress = isBillingAdress;
+	public void setBillingAddress(boolean isBillingAdress) {
+		this.isBillingAddress = isBillingAdress;
 	}
 
 	public int getVersion() {
