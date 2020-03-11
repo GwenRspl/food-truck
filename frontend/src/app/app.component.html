@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink='home'>Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='users'>Liste Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='catalogue'>Catalogue</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='inscription'>Inscription</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='reactive'>ReactiveForm</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+
+  <!--<app-my-first username="{{username}}" lastName="{{lastName}}"></app-my-first>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of appareils">
+          <app-appareil appareilName="{{item}}" [username]="username" [lastname]="lastName"
+            (ratingUsername)="onRatingUsername($event)" (ratingLastName)="onRatingLastName($event)">
+          </app-appareil>
+        </li>
+      </ul>
+      <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
+    </div>
+  </div>
+  <h1>Formulaire</h1>
+  <app-formulaire></app-formulaire>
+
+  <br><br><br> -->
+  <!-- <app-personne></app-personne> -->
+</div>

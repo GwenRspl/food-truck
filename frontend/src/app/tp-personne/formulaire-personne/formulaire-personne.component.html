@@ -1,0 +1,33 @@
+<form>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="form-control" id="email" placeholder="email" [(ngModel)]="personne.email">
+  </div>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom" [(ngModel)]="personne.nom">
+  </div>
+  <div class="form-group">
+    <label for="nom">Prenom</label>
+    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom"
+      [(ngModel)]="personne.prenom">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+      [(ngModel)]="personne.password">
+  </div>
+  <div class="form-group">
+    <label for="birthday">Date de naissance</label>
+    <input type="date" class="form-control" id="birthday" name="birthday" [(ngModel)]="personne.birthday">
+  </div>
+  <div class="form-group">
+    <label for="profil">Profil</label>
+    <select class="form-control" name="profil" id="profil" [(ngModel)]="personne.profil">
+      <option value="Admin">Admin</option>
+      <option value="Etudiant">Etudiant</option>
+      <option value="Commercial">Commercial</option>
+    </select>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="save()">Enregistrer</button>
+</form>
