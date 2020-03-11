@@ -2,6 +2,8 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -68,5 +70,10 @@ public class ProductApiController {
 		} else {
 			return new ResponseEntity<>("Erreur, produit  n'existe pas", HttpStatus.NOT_FOUND);
 		}
+	}
+	@GetMapping("/products/best")
+	public ResponseEntity<List<Product>> listBest() {
+		Pageable firstpage = PageRequest.of(0, 3);
+		return new ResponseEntity<>(this.prdctrepo.findBestProducts(firstpage), HttpStatus.OK);
 	}
 }

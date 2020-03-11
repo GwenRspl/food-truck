@@ -39,7 +39,7 @@ VALUES('2010-10-10','2020-10-10','La meilleure pizza enfin disponible','img','Ne
 ('2010-10-10','2020-10-10','Le meilleur burger enfin disponible','img','New pizza',1),
 ('2010-10-10','2020-10-10','La meilleure sauce enfin disponible','img','New sauce',1);
 
-INSERT INTO address(city,country,is_billing_adress,number,street,version,zip_code,user_id)
+INSERT INTO address(city,country,is_billing_address,number,street,version,zip_code,user_id)
 VALUES('Paris','France',true,5,'rue des champs',0,'75001',1),
 ('Lyon','France',true,5,'rue des champs',0,'75001',1),
 ('Marseille','France',true,5,'rue des champs',0,'75001',1),
