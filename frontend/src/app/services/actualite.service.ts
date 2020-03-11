@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ActualiteService {
-  private _actualiteUrl = 'http://localhost:8082/api/actualites';
+  private _actualiteUrl = 'http://localhost:8080/api/actualites';
 
   constructor(private _http: HttpClient) {
 
-   }
+  }
 
-  GetActualite() : Observable<Actualite[]> {
+  GetActualite(): Observable<Actualite[]> {
     return this._http.get<Actualite[]>(this._actualiteUrl);
   }
 }
