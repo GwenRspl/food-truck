@@ -4,22 +4,26 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class MealTime {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String label;
 
 	private boolean active;
 
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "mealtime_mealtype", joinColumns = @JoinColumn(name = "mealtime_id"), inverseJoinColumns = @JoinColumn(name = "mealtype_id"))
 	private List<MealType> mealTypes;
