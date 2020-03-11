@@ -1,37 +1,71 @@
 <div class="container">
-  <u>
-    <li *ngFor="let item of userList">{{item.name}}</li>
-  </u>
-</div>
-<br>
-<div class="container">
-  <input type="text" name="input" id="" [(ngModel)]="searchString">
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="selectMealTime">Heure de repas</label>
+        <select id="selectMealTime" class="custom-select" [(ngModel)]="selectedMealTime">
+          <option value="all" selected>Tout</option>
+          <option *ngFor="let time of mealTimes" value="{{time.label}}">{{time.label}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="selectMealType">Type de repas</label>
+        <select id="selectMealType" class="custom-select" [(ngModel)]="selectedMealType">
+          <option value="all" selected>Tout</option>
+          <option *ngFor="let type of mealTypes" value="{{type.label}}">{{type.label}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="search">Recherche</label>
+        <div class="input-group mb-3">
+          <input id="search" class="form-control" type="text" name="input" id="" [(ngModel)]="searchString">
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <fa-icon [icon]="faSearch"></fa-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <table class="table table-striped" *ngIf="productsList.length > 0">
     <thead>
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Code</th>
-        <th scope="col">Release Date</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-        <th scope="col">Rating</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Produit</th>
+        <th scope="col">Jours disponibles</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Note</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of productsList | filter:searchString ">
-        <td>{{product.productId}}</td>
+      <tr *ngFor="let product of productsList | filter:searchString:selectedMealType:selectedMealTime ">
+        <td>{{product.image}}</td>
         <td>
-          <a [routerLink]="['/catalogue', product.productId]"> {{product.productName}}</a>
+          <a [routerLink]="['/catalogue', product.productId]"> {{product.name}}</a>
         </td>
-        <td>{{product.productCode}}</td>
-        <td>{{product.releaseDate}}</td>
-        <td>{{product.description}}</td>
+        <td>
+          <span *ngFor="let day of product.days">{{day.jour}} </span>
+        </td>
         <td>{{product.price}}€</td>
-        <td>{{product.starRating}}/5
-          <star-rating value="4" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" totalstars="5">
-          </star-rating>
+        <td>{{getAverage(product.rating)}}</td>
+        <td>
+          <div class="row">
+            <div class="col">
+              <fa-icon class="fa-2x" [icon]="faPlus"></fa-icon>
+            </div>
+            <div class="col">
+              <fa-icon class="fa-2x" [icon]="faMinus"></fa-icon>
+            </div>
+          </div>
         </td>
+
       </tr>
     </tbody>
   </table>

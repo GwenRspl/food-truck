@@ -1,7 +1,7 @@
 
 INSERT INTO product(composition,description,name,price,stock,version,image)
 VALUES('composition1','description','Burger',5.50,15,0,'pathToImg'),
-('composition2','description','Burger',5.50,15,0,'pathToImg'),
+('composition2','description','Hot-dog',5.50,15,0,'pathToImg'),
 ('composition3','description','Croissant',5.50,15,0,'pathToImg'),
 ('composition4','description','Kebab',5.50,15,0,'pathToImg'),
 ('composition5','description','Coleslaw',5.50,15,0,'pathToImg'),

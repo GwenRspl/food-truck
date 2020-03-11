@@ -1,6 +1,4 @@
 
-import { InscriptionGuard } from './inscription.guard';
-import { ConnectedGuard } from './connected.guard';
 import { ProductDetailComponent } from './catalogue/product-detail/product-detail.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
@@ -12,9 +10,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'catalogue', component: CatalogueComponent, canActivate: [ConnectedGuard] },
+  { path: 'catalogue', component: CatalogueComponent },
   { path: 'catalogue/:id', component: ProductDetailComponent },
-  { path: 'inscription', component: FormulaireComponent, canDeactivate: [InscriptionGuard] },
+  { path: 'inscription', component: FormulaireComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
